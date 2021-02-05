@@ -1,6 +1,6 @@
 <?php
 $serverName = "localhost";
-$database = "sistemafic";
+$database = "escola";
 $username = "root";
 $password = "";
 
