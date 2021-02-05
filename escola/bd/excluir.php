@@ -14,4 +14,4 @@
     mysqli_close($strcon);
 
     
-    echo "<a href='main.php'>VOLTAR</a>";
+    echo "<a href='../main.php'>VOLTAR</a>";

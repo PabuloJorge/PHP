@@ -15,6 +15,6 @@
     mysqli_close($strcon);
 
     echo "<p>Registro cadastrado com sucesso!</p>";
-    echo "<a href='main.php'>VOLTAR</a>";
+    echo "<a href='../main.php'>VOLTAR</a>";
 
 ?>
