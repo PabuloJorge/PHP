@@ -10,7 +10,7 @@
 
     echo "<p>Registro excluído com sucesso!</p>";
     
-
+    
     mysqli_close($strcon);
 
     

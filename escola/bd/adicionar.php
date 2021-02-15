@@ -5,7 +5,7 @@
     $nome = $_POST['nome'];
     $idade = $_POST['idade'];
     $endereco = $_POST['endereco'];
- 
+    
 
 
     $sql = "INSERT INTO alunos (nome, idade, endereco) VALUES ('$nome', '$idade', '$endereco')";

@@ -1,5 +1,6 @@
 <?php
 include_once("./bd/conectar.php");
+include_once("./bd/listar.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,43 +15,18 @@ include_once("./bd/conectar.php");
 
 <body>
     <header>
-        <img src="./img/logo.png" alt=""><h1>Escola Da Conquista</h1>
+        <img src="./img/logo.png" alt="">
+        <h1>Escola Da Conquista</h1>
     </header>
 
     <section>
-    <div class="tabela">
-    <h2>Lista de Alunos</h2>
-    <table name="lista" border='1' width='50%'>
-        <tr>
-            <th>ID</th>
-            <th>NOME</th>
-            <th>IDADE</th>
-            <th>ENDEREÇO</th>
-        </tr>
+        <div class="tabela">
+            <h2>Lista de Alunos</h2>
+            <?php
+            listar($strcon);
+            ?>
+        </div>
 
-        <?php
-
-        $sql = "SELECT * FROM alunos";
-        $resultado = mysqli_query($strcon, $sql);
-
-        while ($registro = mysqli_fetch_array($resultado)) {
-            $id = $registro['id'];
-            $nome = $registro['nome'];
-            $idade = $registro['idade'];
-            $endereco = $registro['endereco'];
-
-            echo "<tr>";
-            echo "<td>" . $id . "</td>";
-            echo "<td>" . $nome . "</td>";
-            echo "<td>" . $idade . "</td>";
-            echo "<td>" . $endereco . "</td>";
-            echo "</tr>";
-        }
-        mysqli_close($strcon);
-        echo "</table>";
-        ?>
-    </div>
-    
         <div class="adicionar">
             <h2>Adicionar Alunos</h2>
             <form name="adicionar" action="./bd/adicionar.php" method="POST">
@@ -77,7 +53,7 @@ include_once("./bd/conectar.php");
                 <input name="botao" type="submit" value="Editar" class="botao">
             </form>
         </div>
-        </section>
+    </section>
 </body>
 
 </html>
